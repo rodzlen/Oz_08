@@ -10,6 +10,7 @@ Git 셋팅 순서
     - git add . 는 모든 변경된 사항을 스테이징 한다. 
     - git add 파일명 특정 파일만 스테이징
     - git rm --cached 스테이징 취소를 원하는 파일명 (해당 코드는 스테이징 취소)
+    - 모든 스테이징을 취소할 땐 git reset을 이용
 4. git commit -m "커밋 메세지"
 
 5. git remote add origin "레포지토리 주소"
