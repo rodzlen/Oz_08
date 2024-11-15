@@ -95,7 +95,7 @@
     Merge와는 다르게 합치고 싶은 브랜치에서 Rebase를 진행후 main으로 돌아와 다시 한번 merge를 해야한다.
         - 해당 이유는 HEAD의 위치가 Rebase전의 위치하기 때문에 다시 한번 merge시켜 HEAD의 위치를 최신화
 
-// Rebase는 Merge 이력이 남지 않는다. 
+// Rebase는 Merge 이력이 남지 않는다.
 
 16. cherry-pick
     - git cherry-pick 해시
