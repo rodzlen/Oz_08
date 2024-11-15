@@ -23,5 +23,18 @@ Git 셋팅 순서
 7. git push -u origin main
     -  -u 를 사용하였기 때문에 앞으로는 git push만 해주면 된다
 
+8. git log 
+    - git log -p 각 커밋들의 변경사항 함께 보기
+
+    - git log -(숫자) 최근 n개의 커밋 보기
+    
+    - git log --oneline 한 줄로 보기 
+
+    - git log -S (검색어) 변경사항 내 단어 검색 
+
+    - git log --grep (검색어) commit 메세지로 검색
+
+    - git log --all --decorate --oneline --graph    자주 사용되는 그래프로 로그 보기
+    
 mkdir로 폴더 생성 
 touch Readme.md로 파일 생성     
