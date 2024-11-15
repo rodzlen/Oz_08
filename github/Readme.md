@@ -1,5 +1,4 @@
-### Day1
-Git 셋팅 순서
+### Day 01
 1. git init 
 2. git config 설정
     - git config user.name "설정할 이름"
@@ -23,6 +22,7 @@ Git 셋팅 순서
 7. git push -u origin main
     -  -u 를 사용하였기 때문에 앞으로는 git push만 해주면 된다
 
+### Day 02
 8. git log 
     - git log -p 각 커밋들의 변경사항 함께 보기
 
@@ -35,6 +35,36 @@ Git 셋팅 순서
     - git log --grep (검색어) commit 메세지로 검색
 
     - git log --all --decorate --oneline --graph    자주 사용되는 그래프로 로그 보기
-    
-mkdir로 폴더 생성 
-touch Readme.md로 파일 생성     
+
+9. git reset 
+    - git reset --hard [커밋 해시]
+    - git reset --soft [커밋 해시]
+    - git reset --hard [커밋 해시]
+
+10. git reflog
+    - reset으로 사라진 커밋을 복구할 수있음
+    - git reset --hard 해당 해시를 입력하면 다시 돌아갈 수 있다. (헷갈림 주의)
+
+11. git revert *현업에서 주로 사용*
+    - 원하는 시점의 커밋된 내용만 되돌림 (이전의 다른 이력을 바꾸지 않음)
+    - 되돌린 내용에 대해 새로운 커밋을 생성함 (해시값도 달라짐)
+
+    * 오류 시 해당 문제를 해결하고 아래 명령어로 다시 진행
+    - git revert --countinue
+    * 자동 커밋되지 않고 변경 이력만 되돌릴 때 아래명령어 진행
+    - git revert --no-commit (되돌릴 커밋 해시)
+
+12. git branch
+    - branch는 하나의 작업 단위, 각각의 기능
+    - Main코드는 건들지 않는다. Merge를 사용해 병합시킴
+
+    - git branch (브랜치 이름) -- 브랜치를 생성한다
+    - git switch 브랜치명 -- 브랜치 이동
+    - git switch -c 브랜치 이름 -- 브랜치 만들고 바로 이동
+    - git branch -d 브랜치명 -- 해당 브랜치를 삭제
+    - git branch -m 기존브랜치명 새 브랜치명 -- 해당 브랜치 이름을 바꿈
+
+13. HEAD 
+    - 해당 branch의 마지막 commit을 뜻함
+        즉, HEAD가 특정 commit에 위치하고 있다면 그 branch의 가장 마지막 commit이라고 해석할 수 있음
+
