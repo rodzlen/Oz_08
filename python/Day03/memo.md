@@ -86,16 +86,20 @@ join('',asd)
         zip매서드를 이용한 병렬 처리로 dict 자료형을 생성 가능하다
 
 - **값 추가**
-    - asd.update({key : value, key2 : value2})
+    - asd.update({key : value, key2 : value2}): 단, key가 문자열일 때만 가능하고 key가 숫자형이라면 update({})로 활용해야 한다.
+    - 
 - **값 변경**
     - asd["밸류를 변경할 키 값"] = "변경할 밸류 값" 
 - **값 삭제** 
     - del asd["해당 키 값"] : 인덱싱이 안되기 때문에 인덱스 넘버는 적용이 안된다. key로만 접근하기 때문
+    - pop(x, default) : 해당 키값의 밸류를 반환하고 삭제 해당 키가 존재하지 않으면 default를 반환 - 생략가능
+    - popitem() : 마지막에 추가된 키 값과 밸류 값을 반환하고 삭제
 
 **다양한 메소드**
 asd.keys() : asd의 key 값만 반환
 asd.values() : asd의 value 값만 반환
 asd.items() : 각 항목을 반환
+asd.setdefault(key, value) : 해당 데이터를 할당한다. value값을 명시하지 않을 경우 키 값만 추가된다 
 
 **dict의 인덱싱**
 - 다른 시퀀스 자료형과는 다르게 인덱싱이 되지 않는다.
