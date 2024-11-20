@@ -57,21 +57,36 @@
 # total_pay = fish[0][0]*fish[0][1] +fish[1][0]*fish[1][1]+fish[2][0]*fish[2][1]
 # print(f'{fish[0][0]} {fish[0][1]}개\n{fish[1][0]} {fish[0][1]}개\n{fish[2][1]} {fish[2][1]}개\n총 {quantity}개 결제 금액은 {total_pay}원입니다.')
 
-채소 = {'당근', '감자'}
-print(type(채소),채소)
+# 채소 = {'당근', '감자'}
+# print(type(채소),채소)
 
-채소.add('거짓말')
-print(채소)
-채소.update('채소는 아니고', '니얼굴')
-print(채소)
+# 채소.add('거짓말')
+# print(채소)
+# 채소.update('채소는 아니고', '니얼굴')
+# print(채소)
 
-#채소.remove("근") # 데이터에 존재하지 않으면 오류 일으킴
-채소.discard("소")
-채소.discard("소")
-print(채소.pop())
+# #채소.remove("근") # 데이터에 존재하지 않으면 오류 일으킴
+# 채소.discard("소")
+# 채소.discard("소")
+# print(채소.pop())
 
-채소2 = ['당근', '감자', '니']
-print(채소.union(채소2))
-print(채소.intersection(채소2))
-print(채소.difference(채소2))
-print(set.difference(채소,채소2))
+# 채소2 = ['당근', '감자', '니']
+# print(채소.union(채소2))
+# print(채소.intersection(채소2))
+# print(채소.difference(채소2))
+# print(set.difference(채소,채소2))
+
+
+# x={"김":"치","상":"추"}
+# del x['김']
+# print(x.keys())
+
+# x= set(range(10))
+# print(type(x),x)
+# x={}
+x = [1,2,3,4,4]
+print(x)
+print(sum(x),min(x))
+
+a = [1,2,3,4,5,6,7,8,9,10]
+print(sum(a), max(a), min(a), sum(a) / len(a))
