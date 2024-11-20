@@ -1,6 +1,6 @@
 ##Live Session 
 ### 프로젝트 : 간단한 ATM 관리 시스템
-balance = 1000
+balance = 1000 # 현재 잔액
 receipts = []
 
 while True:
