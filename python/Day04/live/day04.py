@@ -1,4 +1,4 @@
-## 붕어빵 시발롬
+## 붕어빵 진짜 싫다
 
 '''
 관리자모드 -> 붕어빵 추가 
@@ -43,7 +43,7 @@ while True:
     if id in["2", "판매"]:
         while True:
             receipt = {}
-            
+
             for name, info in stock.items():
                 print(f"{name}의 재고: {info['재고']}")
             order = input("주문할 붕어빵 종류 입력하시거나 구매하지 않으시려면 '종료'를 입력해 주세요: ")
