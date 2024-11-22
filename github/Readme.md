@@ -101,3 +101,6 @@
     - git cherry-pick 해시
     다른 branch에서 원하는 commit을 가져올 수 있는 명령어
     commit을 복사해서 가져오기 때문에 commit을 가져온 branch에는 영향을 주지 않는다.
+
+17. 깃 전략 
+    - Fork 해온  브랜치를 클론코딩하여 브랜치로 올린다
