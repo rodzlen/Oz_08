@@ -94,21 +94,54 @@ print("오류는 아주 사소한 것부터 발생합니다.")
 # os.system("dir") # 윈도우
 
 # datetime 모듈
-import datetime as d
-print("오늘 날짜와 시간 출력")
-now = d.datetime.now()
+# import datetime as d
+# print("오늘 날짜와 시간 출력")
+# now = d.datetime.now()
 
-print("오늘 날짜와 시간 출력")
-print(now.year, "년")
-print(now.month, "월")
-print(now.day, "일")
-print(now.hour, "시")
-print(now.minute, "분")
-print(now.second, "초")
+# print("오늘 날짜와 시간 출력")
+# print(now.year, "년")
+# print(now.month, "월")
+# print(now.day, "일")
+# print(now.hour, "시")
+# print(now.minute, "분")
+# print(now.second, "초")
 
-from urllib import request
+# from urllib import request
 
-target = request.urlopen("https://www.naver.com") 
-web_code = target.read()# 이거 안쓰면 못본다
+# target = request.urlopen("https://www.naver.com") 
+# web_code = target.read()# 이거 안쓰면 못본다
 
-print(web_code)
+# print(web_code)
+
+# from urllib import request
+# from bs4 import BeautifulSoup
+
+# target = request.urlopen("http://www.kma.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108")
+
+# soup =BeautifulSoup(target, "html.parser")
+
+# for location in soup.select("location"):
+#     print("도시 :", location.select_one("city").string)
+#     print("날씨 :", location.select_one("wf").string)
+#     print("최저기온 :", location.select_one("tmn").string)
+#     print("최고기온 :", location.select_one("tmx").string)
+
+# 데코레이터
+# def test(function):
+#     def csos():
+#         print("응용력을 키우자")
+#         function()
+#         print("실행이 될까?")
+
+#     def wrapper():
+#         print("허언증이 재발했습니다")
+#         function()
+#         print ("격리되었습니다.")
+#     return  wrapper
+
+# @test
+# def oz():
+#     print("머릿속의 지우개")
+
+# oz()
+
