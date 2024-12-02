@@ -39,3 +39,15 @@
 - DELETE FROM users WHERE age =25 LIMIT;
 - DELETE FROM users AS u JOIN orders AS o ON u.id = o.id WHERE u.username = 유저 테이블과 오더 테이블에서 id 가 같고 김이라는 이름을 가진 사람의 데이터를 삭제
 - DELETE FROM employees USING employees AS e, departments AS d WHERE e.departments_id = d.id AND d.name = 'HR';
+
+### JOIN
+- INNER JOIN (내부조인) 테이블 A를 기준으로 테이블 B를 합하여 생성
+```mysql
+-- 기본구조
+-- 테이블 A를 기준으로 A의 키값과 매칭되는 B의 키값을 합쳐서 조회
+selct * from table A
+left join table B
+on A.key = B.key
+```
+
+**enum(x,y)**: enum()안에 포함된 값 중에서만 생성할 수 있다.
