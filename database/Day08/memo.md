@@ -39,3 +39,13 @@
    -  문서는 MongoDB에서의 기본 데이터 단위로, JSON 형태의 키 - 값 쌍을 갖는다
    -  각 문서는 서로 다른 구조를 가질 수 있으며 필요에 따라 필드를 동적으로 추가할 수 있음
    -  document는 collection 내에 저장되며 각 document는 고유한 objectid를 가진다
+
+## aggregation 
+- $match : 데이터 필터링
+- $group : 집계화 
+- $project : 특정 필드를 선택하거나 새로운 필드를 생성 
+- $sort : 결과를 정렬 기본 오름차순
+- $limit : 결과의 개수를 제한 
+- $skip : 특정 개수의 문서를 건너뜀
+- $unwind : 배열 필드를 개별 문서로 분리
+- $lookup : 다른 컬렉션과의 조인을 수행 
