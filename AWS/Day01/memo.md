@@ -125,3 +125,57 @@ Elasticity - 탄력성
 cost saving 
 
 # 클라우드 네트워크 
+
+AWS 
+region az를 묶어 부르는 availability zone - data센터들을 모아논 것 (가용영역)
+az - 하나 이상의 데이터센터가 있는 완전히 고립된 이느라 
+    - 최대 100km간격
+    - 고유한 전력 인프라
+물리적 장비를 논리적으로 사용
+
+CLOUD cumputing 
+Virtual Server 
+하이퍼 바이저  : 물리적 하드웨어와 가상 머신 사이에서 리소스를 관리하는 소프트웨어 계층 Guest os 연결해줌  
+virtual machine - 각각의 어플리캐이션과 os를 가짐 
+이에서 컨테이너가 나옴
+vertual server는 각각 vertual machine에 각각 게스트os가 들어감
+
+하지만 컨테이너는 host os를 사용 
+차이점 : os 커널 공유 여부
+
+# serverless
+기본적으로 클라우드 컴퓨팅에서 사용
+서버가 나의 관리 영역이 아님 
+코드와 데이터만 관리
+서버 관리와 용량 계획을 클라우드 제공업체가 처리한다는 의미
+
+## EC2 Elastic cloud computing
+서버 빌려주는 그 자체 
+aws에서 제공하는 클라우드 컴퓨팅 서비스 
+큰 장점 돈만 있으면 됨
+주요 특징
+- 탄력성
+- 유연성
+- 통합
+- 안정성
+- 보안 4단계 이상 방화벽
+
+ECS 아마존에서 
+EKS 쿠버네티스로
+
+# Network
+VPC virtual private cloud - 건물  ip 대역을 여기서 잡아줘야 일반적으로 10.0.0.0 ~ 16.0.0.0
+서브넷으로 구성 
+
+subnet - 층
+vpc 내부의 az단위로 격리 
+    public subnet
+        - 트래픽이 인터넷 게이트웨이로 라우팅
+    private subnet 
+        - 인터넷 게이트 없이 트래픽을 라우팅 
+
+internet gateway - 출입문
+
+Route Table - 층으로 가는 계단, 길 (public만)
+
+
