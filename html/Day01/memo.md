@@ -51,6 +51,16 @@ option 태그 사용하여 표시
     selected default옵션임
 value 로 각각 옵션의 값 구별
 
+fieldset - 입력 영역 지정
+    legend 태그 - 범례 
+
+
 
 progress 태그 진척도 표시
 value, max 
+
+meta 프로토콜 데이터
+http-equiv 
+name도 키:값으로 들어감 ex) content
+    검색 최적화에 대한 장치
+    
