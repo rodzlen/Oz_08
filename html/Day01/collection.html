@@ -6,6 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <table>
+        <caption>자기소개 설문결과</caption>
+        <thead>
+            <tr>이름</tr>
+            <tr>나이</tr>
+            <tr>성격</tr>
+        </thead>
+        <tbody>
+            <td name="resultName"></td>
+            <td name="resultAge"></td>
+            <td name="resultCharactor"></td>
+        </tbody>
+    </table>
 </body>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementsByName('resultName').textContent = params.get('name');
+    document.getElementsByName('resultAge').textContent = params.get('age');
+    document.getElementsByName('resultCharactor').textContent = params.get('charactor');
+</script>
 </html>

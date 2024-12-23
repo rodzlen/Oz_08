@@ -33,7 +33,7 @@
     <hr>
     <div id ='input-test'>
         <h2>로그인 형식 실습</h2>
-        <form>
+        <form action=# method="post">
             <label id="color">아이디: <input type="text"></label><br>
             <label>비밀번호: <input type="password"></label>
             <input type="submit">
@@ -58,5 +58,31 @@
     <div id="progress-test">
         <progress value="30" max="100"></progress>
     </div>
+    <fieldset>
+        <legend>음료 주문</legend>
+            <select>
+                <option value="콜라">콜라</option>
+                <option value="사이다" selected>사이다</option>
+                <option value="펩시">펩시</option>
+                <option value="제로콜라">제로콜라</option>
+            </select>
+    </fieldset>
+    <form >
+        <fieldset>
+            <label for="name">이름</label>
+            <input type=text id="name" name="name">
+            <br>
+            <label for="age">나이</label>
+            <input type=number id="age" name="age">
+            <br>
+            <label for="charactor">성격</label>
+            <textarea id="charactor" name="charactor"></textarea>
+            <input type="submit">
+        </fieldset>
+    </form>
 </body>
+<!-- <script>
+    const queryString = `?name=${encodeURIComponent(name)}&age=${encodeURIComponent(age)}&charactor=${encodeURIComponent(charactor)}`;
+    window.location.href = 'collection.html' + queryString;
+</script> -->
 </html>
