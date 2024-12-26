@@ -50,3 +50,14 @@ getElementBy
 
 write 메소드 
 화면에 출력
+
+createElement('해당태그')
+프로그램 단계에서 만들어지기만 함 화면에 표시되진 않음 
+
+target.appenChild(추가할 요소)
+const p = document.createElement('p')
+document.body.appendChild(p)
+
+append와 appendChild 차이점
+- append : 노드객체와 문자열 같이 추가 가능 반환 데이터 없음
+- child : 노드 객체만 추가 가능 추가한 자식 노드 반환
