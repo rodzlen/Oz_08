@@ -1,11 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>조건문</title>
 </head>
 <body>
-    
+    <h1></h1>
+    <p></p>
+    <script>
+        const h = document.querySelector('h1')
+        const p = document.querySelector('p')
+        
+        
+        const isThere = confirm('제목을 표시할까요?')
+        console.log(typeof isThere,isThere)
+        if(isThere){
+            h.textContent='당신이 내야할 버스요금은?'
+            
+            
+        }
+        const age = parseInt(prompt('나이를 입력하세요'))
+        if(age>=20){
+            p.textContent='성인입니다.'
+        }else{
+            p.textContent='민짜네요'
+        }
+
+    </script>
 </body>
 </html>
