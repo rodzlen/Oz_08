@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가입완료</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <!-- 현재 시간 표시 -->
+        <div class="position-absolute top-0 start-50 translate-middle-x mt-1 text-center">
+            <span id="currentTime" class="fw-bold"></span>
+        </div>
+        <!-- 테마 설정 버튼 -->
+        <div class="position-absolute top-0 end-0 mt-1">
+            <button class="btn btn-light" id="lightTheme">light</button>
+            <button class="btn btn-dark" id="darkTheme">dark</button>
+        </div>
+    </header>
+    <main class="container mt-5">
+        <h3 class="mb-4">반갑습니다.</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>항목</th>
+                    <th>정보</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>아이디</td>
+                    <td id="displayId"></td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td id="displayName"></td>
+                </tr>
+                <tr>
+                    <td>전화번호</td>
+                    <td id="displayPhone"></td>
+                </tr>
+                <tr>
+                    <td>성별</td>
+                    <td id="displayGender"></td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td id="displayEmail"></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // sessionStorage에서 데이터 불러오기
+        const userId = sessionStorage.getItem('userId');
+        const userName = sessionStorage.getItem('userName');
+        const userPhone = sessionStorage.getItem('userPhone');
+        const userGender = sessionStorage.getItem('userGender');
+        const userEmail = sessionStorage.getItem('userEmail');
+
+        // 데이터를 테이블에 표시
+        document.getElementById('displayId').textContent = userId;
+        document.getElementById('displayName').textContent = userName;
+        document.getElementById('displayPhone').textContent = userPhone;
+        document.getElementById('displayGender').textContent = userGender;
+        document.getElementById('displayEmail').textContent = userEmail;
+    </script>
+<script src="project.js"></script>
+</body>
+</html>
