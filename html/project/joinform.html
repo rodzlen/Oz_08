@@ -3,9 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>joinForm</title>
+    <title>Join Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
-    
+    <header>
+        <!-- 현재 시간 표시 -->
+        <div class="position-absolute top-0 start-50 translate-middle-x mt-1 text-center">
+            <span id="currentTime" class="fw-bold"></span>
+        </div>
+        <!-- 테마 설정 버튼 -->
+        <div class="position-absolute top-0 end-0 mt-1">
+            <button class="btn btn-light" id="lightTheme">light</button>
+            <button class="btn btn-dark" id="darkTheme">dark</button>
+        </div>
+    </header>
+    <main class="container mt-5">
+        <h3 class="mb-4">회원가입</h3>
+        <form autocomplete="off" class="w-50">
+            <div class="mb-3">
+                <label for="id" class="form-label">아이디</label>
+                <input type="text" class="form-control" id="id" required placeholder="아이디">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">비밀번호</label>
+                <input type="password" class="form-control" id="password" required placeholder="비밀번호">
+                <p>* 영문, 숫자, 특수문자를 포함한 8자 이상 30자 미만이어야 합니다.</p>
+            </div>
+            <div class="mb-3" id="check">
+                <label for="password1" class="form-label">비밀번호 확인</label>
+                <input type="password" class="form-control" id="password1" required placeholder="비밀번호 확인">
+                <p id="vaild-pw"></p>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">이름</label>
+                <input type="text" class="form-control" id="name" required placeholder="이름">
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">전화번호</label>
+                <input type="number" class="form-control" id="phone" required placeholder="휴대전화 번호">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">성별</label><br>
+                <label for="male" class="form-label">
+                    <input type="radio" id="male" value="male" name="gender"> 남자
+                </label>&nbsp;
+                <label for="female" class="form-label">
+                    <input type="radio" id="female" value="female" name="gender"> 여자
+                </label>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">이메일</label>
+                <input type="email" class="form-control" id="email" required placeholder="이메일">
+            </div>
+            <button type="submit" class="btn btn-primary w-10">가입</button>
+        </form>
+    </main>
+
+    <script src="project.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<script>
+    const pw1 = document.getElementById('password');
+    const pw2 = document.getElementById('password1');
+    const check = document.getElementById('check');
+    const vaildPw = document.getElementById('vaild-pw');
+
+    // 비밀번호 유효성 검사 함수
+    const validatePassword = (password) => {
+        // 비밀번호 길이 검사 (8자 이상, 30자 미만)
+        if (password.length < 8 || password.length > 30) {
+            return "비밀번호는 8자 이상 30자 미만이어야 합니다.";
+        }
+        // 영문, 숫자, 특수문자 포함 검사
+        const regex = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+={}\[\]|;:'",.<>?/-]).{8,30}$/;
+        if (!regex.test(password)) {
+            return "비밀번호는 영문, 숫자, 특수문자를 포함해야 합니다.";
+        }
+        return "";
+    };
+
+    // 폼 제출 전 비밀번호 확인 로직
+    document.querySelector('form').addEventListener('submit', (event) => {
+        let errorMessage = '';
+
+        // 비밀번호 유효성 검사
+        errorMessage = validatePassword(pw1.value);
+
+        // 비밀번호 일치 검사
+        if (pw1.value !== pw2.value) {
+            errorMessage = "비밀번호가 일치하지 않습니다.";
+        }
+
+        if (errorMessage) {
+            event.preventDefault(); // 폼 제출 막기
+            vaildPw.textContent = errorMessage; // 오류 메시지 표시
+            vaildPw.style.color = 'red';
+            return;
+        } else {
+            vaildPw.textContent = ''; // 오류 메시지 제거
+        }
+
+        // 사용자 입력 값 가져오기
+        const userId = document.getElementById('id').value;
+        const userName = document.getElementById('name').value;
+        const userPhone = document.getElementById('phone').value;
+        const userGender = document.querySelector('input[name="gender"]:checked')?.value;
+        const userEmail = document.getElementById('email').value;
+
+        // sessionStorage에 저장
+        sessionStorage.setItem('userId', userId);
+        sessionStorage.setItem('userName', userName);
+        sessionStorage.setItem('userPhone', userPhone);
+        sessionStorage.setItem('userGender', userGender);
+        sessionStorage.setItem('userEmail', userEmail);
+        
+        
+        window.location.href = 'hello.html'
+        alert(`${userName}님 가입을 축하드립니다!`)
+    });
+</script>
 </html>
