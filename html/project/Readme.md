@@ -55,11 +55,13 @@
 ### 기능 구성 
 - 기본적인 유효성 검사는 태그마다 `required`사용하여 구현하였음
 <img width="1497" alt="스크린샷 2024-12-27 오후 5 11 37" src="https://github.com/user-attachments/assets/9b892d1c-e633-41ff-9b17-b0936c8baffb" />
+
 -------
 - 비밀번호가 요구조건을 만족하지 못하거나 비밀번호 확인의 입력 값이 다를 시 빨간 글씨로 입력란 아래에 설정한 문구가 나타남
 <img width="619" alt="스크린샷 2024-12-27 오후 5 13 58" src="https://github.com/user-attachments/assets/b237e907-c75d-43c3-8336-1584d9561a75" />
 <img width="633" alt="스크린샷 2024-12-27 오후 5 13 47" src="https://github.com/user-attachments/assets/8a89c74a-1fe2-4f33-9cef-679885efabf4" />
 <img width="672" alt="스크린샷 2024-12-27 오후 5 13 33" src="https://github.com/user-attachments/assets/df568e39-36b7-4d51-939d-8f941ffc7d2e" />
+
 --------
 - 요구 조건을 만족하여 가입 버튼을 누르면 회원의 이름과 안내창이 뜨고 후에 정보 페이지로 전환된다
 
