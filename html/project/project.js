@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 공통 기능: 현재 시간 표시
+    // 공통 기능: 현재 날짜와 시간 표시
     const updateTime = () => {
         const now = new Date();
         const formattedTime = now.toLocaleTimeString('ko-KR', {
+            year: '2-digit',
+            month: '2-digit',
+            day: '2-digit',
             hour: '2-digit',
             minute: '2-digit',
             second: '2-digit',
