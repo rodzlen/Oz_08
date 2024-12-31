@@ -12,4 +12,13 @@ soup = BeautifulSoup(html, "html.parser")
 lst50 = soup.select(".lst50") # 1~50 list 형태로 들어가 있을거고 [1, 2, 3, 4, 5... 50]
 lst100 = soup.select(".lst100")#51 ~ 100 list 형태로 들어가 있을거고 [51, 52, 53...100]
 lst_all = lst50 + lst100 #lst50이랑 lst100을 합치고 싶어요 => 
-print(len(lst_all))
+
+for rank, i in enumerate(lst_all, 1):
+    title = i.select_one(".ellipsis.rank01")
+    singer = i.select_one('.checkellipsis')
+    album = (".ellipsis.rank03")
+
+    print (f"[순위] : {rank}")
+    print (f"[제목] : {title}")
+    print (f"[가수] : {singer}")
+    print (f"[앨범] : {album}")
