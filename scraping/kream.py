@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 import time
-
+import pymysql
 # 클래스, 아이디를 css_selector를 이용해서 원하는 값을 가져오기 위한 패키지
 from selenium.webdriver.common.by import By # by문법
 
@@ -37,20 +37,43 @@ soup = BeautifulSoup(html,"html.parser")
 
 items = soup.select(".item_inner")
 
+product_list = []
+
 for item in items:
     
     product_name = item.select_one(".translated_name").text
     if "후드" in product_name:
         category = "상의"
-        #카테고리
-        print(category)
-        #브랜드
         brand = item.select_one(".product_info_brand.brand").text
-        print(brand.lstrip())
-        #제품명
-        print(product_name)
-        #가격
         price = item.select_one(".amount").text
+        product = [category,brand,product_name, price]
+        product_list.append(product)
+
+        print(category)
+        print(brand.lstrip())
+        print(product_name)
         print(price)
-        #빈줄 출력
-        print("---------------")
+
+driver.quit()
+
+connection = pymysql.connect(
+    host='127.0.0.1',
+    user='root',
+    password='1234',
+    db='kream',
+    charset='utf8mb4',
+    )
+
+#mysql에 데이터를 넣거나 가져올 때 쿼리문을 실행시켜주는 등 
+#데이터베이스와의 소통을 도와주는 역할
+connection.cursor()
+
+def execute_query(connection, query, args=None):
+    with connection.cursor() as cursor:
+        cursor.execute(query, args or ())
+        if query.strip().upper().startswith('SELECT'):
+            return cursor.fetchall()
+        else:
+            connection.commit()
+for i in product_list:
+    execute_query(connection,"INSERT INTO kream (category, brand, product_name, price) VALUES (%s,%s,%s,%s)",(i[0],i[1],i[2],i[3]))
