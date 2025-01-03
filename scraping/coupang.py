@@ -35,12 +35,19 @@ for rank,item in enumerate(items,1):
     price = item.select_one('.price-value').text
     rocket = item.select_one('.badge.rocket')
     link =  item.find_parent('a').get('href')
+    img =  item.select_one('.search-product-wrap-img')
     if isad:
         ad_count+=1
     else:
         print(rank-ad_count, '위')
         print('이름: '+ title)
         print('가격: '+price+'원')
+        if img.get('data-img-src'): 
+            img=img.get('data-img-src')
+        else:
+            img= img.get('src')
+        img=img.replace('230x230ex','600x600ex')
+        print('제품 사진'+f'https:{img}')
         print('로켓배송: ', 'Yes' if rocket else 'No')
         print('링크: ','https://www.coupang.com'+link)
         print('='*10)
