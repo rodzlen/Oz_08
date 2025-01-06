@@ -3,7 +3,7 @@ from flask_smorest import Blueprint, abort
 from schemas import ItemSchema
 
 # 블루프린트 생성: 'items'라는 이름으로, URL 접두사는 '/items'
-blp = Blueprint("items", "items", url_prefix="/items", description="Operations on items")
+user_blp = Blueprint("items", "items", url_prefix="/items", description="Operations on items")
 
 # 간단한 데이터 저장소 역할을 하는 리스트
 items = []
