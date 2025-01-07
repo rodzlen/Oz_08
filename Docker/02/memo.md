@@ -62,3 +62,22 @@ docker run 이미지명 (실행명령)
 docker run --env KEY = VALUE 이미지명
 
 ```
+
+### 환경변수 덮어쓰기 
+- env color application 사용
+
+## 컨테이너 생명주기 
+0. 이미지에서 시작
+1. created 생성단계 내부에서 프로세스를 실행하지 않음 -> start -> running 실행 상태로됨 
+    - run 명령은 create와 start가 합쳐짐 
+2. restart 명령을 보내면 10초 뒤에 재시작 
+    - pause 일시정지 상태 가능 
+    - unpause 일시정지 해제 
+    - 종료 가능
+3. 삭제 rm으로 모든 상태에서 삭제 가능 실행중은 -f 붙여서 
+
+```
+docker logs -f 컨테이너명
+```
+-f 옵션으로 터미널에 계속해서 실행 됨
+
