@@ -3,6 +3,7 @@ from flask_smorest import Api
 from db import db
 from routes.users import user_blp
 from routes.board import board_blp
+from flask_migrate import Migrate
 
 
 
@@ -10,8 +11,9 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:1234@localhost/oz'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =False # 트래킹 계속 할건지 -> 부하가 크기 때문에 false로 보통 설정
 
-db.init_app(app)
 
+db.init_app(app)
+migrate = Migrate(app,db)
 # blp 설정
 
 app.config["API_TITLE"] = "My API"
